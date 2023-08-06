@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: aqua;
+  min-width: 100vh;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 0%;
+}
+
+.header {
+  position: relative;
+  background-color: rgb(63, 64, 65);
+  padding: 8px;
+  transform-style: preserve-3d;
+  height: 15vh;
+  overflow: hidden; /* Add this line to hide the overflow of the pseudo-element */
+  margin-top: 20px;
+}
+
+@keyframes parallaxAnimation {
+  0% {
+    transform: translateZ(-1px) scale(2);
+  }
+  50% {
+    transform: translateZ(-10px) scale(2.2);
+  }
+  100% {
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(https://media.tenor.com/dx_aEjaiH70AAAAC/batman-bruce-wayne.gif) center / cover no-repeat fixed;
+  transform-origin: center;
+  animation: parallaxAnimation 10s infinite;
+  z-index: -1;
+}
+
+
+
+.footer {
+  background-color: black;
+}
+
+h1 {
+  margin: 0;
+}
+
+.main {
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 25px;
+  
+}
+
+.movie {
+
+  background-color: gray;
+  color: aqua;
+  border: 1px solid gray;
+  padding: 3px; 
+  font-weight: bold;
+  text-align: center;
+  width: 18%;
+  margin-top: 20px;
+}
+
+.movie img {
+
+  height: 220px;
+  width: 100%
+}
